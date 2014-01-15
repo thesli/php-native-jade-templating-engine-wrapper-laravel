@@ -6,7 +6,7 @@ class Jade
     public static function render($jadefile, $params=[])
     {
         $jade_bin = "/usr/bin/jade"; // if you don't know what it is type `which jade` in your terminal
-        $jade_tpl_path = app_path() . '/jade/'; //enter your template path here
+        $jade_tpl_path = app_path() . '/jade/'; //enter your template path here,defaulted for laravel at app/jade/
         $jadefile = rtrim($jadefile,".jade"); // work for people who use ".jade" extension
 
         /*just in case people do something funky and break the code*/

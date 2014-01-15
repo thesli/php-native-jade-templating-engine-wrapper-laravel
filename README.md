@@ -1,4 +1,4 @@
-# php native Jade templating engine wrapper (for Laravel)
+# php native Jade wrapper (for Laravel)
 
 You need to have jade install using npm(if you don't,download from www.nodejs.com).
 ```
@@ -13,7 +13,7 @@ first change the variables in jadeView.php
 ```
 	<?php
     $jade_bin = "/usr/bin/jade"; // if you don't know what it is type `which jade` in your terminal
-    $jade_tpl_path = app_path() . '/jade/'; //enter your template path here
+    $jade_tpl_path = app_path() . '/jade/'; //enter your template path here,defaulted for laravel at app/jade/
 ```
 
 php file(index.php):
@@ -34,8 +34,9 @@ output on browser:
 ```
 	<h1>You are welcome.</h1>
 ```
+in case of syntax error on jade,the function will render the error message.
 
-## extra step for Laravel:
+## Extra steps for Laravel:
 
 ```
 	edit file that will be preloaded,such as app/start/global.php,or simplely put jadeView.php to 	model,that shoulda work too
@@ -55,4 +56,5 @@ Then in your controller
 ```
 
 ## Roadmap
-- add package support
+- add composer package support
+- get controller class from laravel to make some MVC sense
