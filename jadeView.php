@@ -1,6 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Facade;
-
 class Jade
 {
     public static function render($jadefile, $params=[])
@@ -29,4 +27,3 @@ class Jade
         }
     }
 }
-
