@@ -20,20 +20,37 @@ php file(index.php):
 ```php
 	<?php
 	require "./jadeView.php";
-	$data = ["hello" => "You are welcome.","welcome"=>true];
+	$data = [
+	"hello" => "You are welcome.",
+	"welcome"=>true,
+	"list"=>["item1,item2,item3"],
+	"escapetxt"=>"<b>bold tags</b>"
+	];
 	echo Jade::render("path/to/your/jadefile",$data);
 ```
 jade file($jade_tpl_path . path/to/your/jadefile.jade):
 ```jade
 	if welcome
+		ul
+			for item in list
+				li item
 		h1 #{hello}
+		p= escapetxt
+		p!= escapetxt
 	else
 		h1 PLEASE LEAVE
 ```
 
 output on browser:
 ```html
+	<ul>
+		<li>item 1</li>
+		<li>item 2</li>
+		<li>item 3</li>
+	</ul>
 	<h1>You are welcome.</h1>
+	<p>&lt;p&gt;bold tags&lt;/p&gt</p>
+	<p><b>bold tags</b></p>
 ```
 in case of syntax error on jade,the function will render the error message.
 
