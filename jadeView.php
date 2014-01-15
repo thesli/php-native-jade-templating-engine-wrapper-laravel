@@ -14,7 +14,7 @@ class Jade
         $fullpath = escapeshellarg("{$jade_tpl_path}{$jadefile}.jade");
         $params_json = escapeshellarg(json_encode($params));
 
-        $command = "{$jade_bin} < {$fullpath} --path {$jade_tpl_path} --obj {$params_json}";
+        $command = "{$jade_bin} < {$fullpath} --path {$jade_tpl_path}d --obj {$params_json}"; /
         $output = shell_exec($command);
         if($output){
             return $output;

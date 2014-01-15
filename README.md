@@ -23,7 +23,7 @@ php file(index.php):
 	$data = ["hello" => "You are welcome.","welcome"=>true];
 	echo Jade::render("path/to/your/jadefile",$data);
 ```
-jade file(path/to/your/jadefile.jade):
+jade file($jade_tpl_path . path/to/your/jadefile.jade):
 ```
 	if welcome
 		h1 #{hello}
@@ -35,6 +35,13 @@ output on browser:
 	<h1>You are welcome.</h1>
 ```
 in case of syntax error on jade,the function will render the error message.
+
+## extends layout
+```
+	extends in jade are set to relative to $jade_tpl_path instead of the $jadefile's path
+	in most cases,this make more sense
+```
+
 
 ## Extra steps for Laravel:
 
